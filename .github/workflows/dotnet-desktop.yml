@@ -22,13 +22,9 @@ jobs:
     - name: Test
       run: dotnet test Dangheng.Proxy.csproj --verbosity normal
     - name: Publish
-      run: dotnet publish Dangheng.Proxy.csproj -c Release
-    - name: Remove .pdb debug symbols
-      run: |
-        del bin/Release/net8.0/publish/*.pdb
-        del bin/Release/net8.0/publish/**/*.pdb
+      run: dotnet publish Danheng.Proxy.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
         name: Danheng.Proxy
-        path: bin/Release/net8.0/publish
+        path: bin/Release
