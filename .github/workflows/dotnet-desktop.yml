@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Dangheng.Proxy.csproj
     - name: Test
-      run: dotnet test --verbosity normal
+      run: dotnet test Dangheng.Proxy.csproj --verbosity normal
     - name: Publish
       run: dotnet publish Danheng.Proxy.csproj -c Release -r ${{ matrix.runtime-id }}
     - name: Remove .pdb debug symbols
