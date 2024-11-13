@@ -1,5 +1,5 @@
 name: .NET
-  
+
 on:
   push:
     branches: [ "main" ]
@@ -18,15 +18,15 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore Dangheng.Proxy.csproj
+      run: dotnet restore Danheng.Proxy.csproj
     - name: Test
-      run: dotnet test Dangheng.Proxy.csproj --verbosity normal
+      run: dotnet test Danheng.Proxy.csproj --verbosity normal
     - name: Publish
       run: dotnet publish Danheng.Proxy.csproj -c Release
     - name: Remove .pdb debug symbols
       run: |
-        rm bin/Release/net8.0/publish/*.pdb
-        rm bin/Release/net8.0/publish/**/*.pdb
+        del bin/Release/net8.0/publish/*.pdb
+        del bin/Release/net8.0/publish/**/*.pdb
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
