@@ -22,7 +22,7 @@ jobs:
     - name: Test
       run: dotnet test Dangheng.Proxy.csproj --verbosity normal
     - name: Publish
-      run: dotnet publish Danheng.Proxy.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
+      run: dotnet publish Dangheng.Proxy.csproj -c Release -r win-x64 --self-contained -p:PublishSingleFile=true
     - name: Upload
       uses: actions/upload-artifact@v4
       with:
