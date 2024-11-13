@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore Danheng.Proxy.csproj
+      run: dotnet restore Dangheng.Proxy.csproj
     - name: Test
-      run: dotnet test Danheng.Proxy.csproj --verbosity normal
+      run: dotnet test Dangheng.Proxy.csproj --verbosity normal
     - name: Publish
-      run: dotnet publish Danheng.Proxy.csproj -c Release
+      run: dotnet publish Dangheng.Proxy.csproj -c Release
     - name: Remove .pdb debug symbols
       run: |
         del bin/Release/net8.0/publish/*.pdb
